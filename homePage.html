@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+
+<style>
+body{
+font-family: verdana;
+background:#606060;
+}
+
+.typewriter h1 {
+  color: #fff;
+  font-family: verdana ;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+.mySlides {display:none;}
+
+
+h2{
+   font-family: verdana ;
+   position: fixed;
+   top: 200px;
+   right: 8px;
+   width: 100%;
+}
+
+
+h2 span {
+color: white;
+font-family: verdana;
+letter-spacing: -1px
+background: rgb(0,0,0);
+background: rgba(0,0,0,0.7);
+}
+
+.dropbtn {
+    background-color: #FF4500;
+    color: white;
+    padding: 16px;
+    font-size: 24px;
+    font-family: verdana;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #FF4500;
+}
+
+.dropdown {
+    font-family: verdana ;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    font-family: verdana;
+    position: absolute;
+    right:0;
+    background-color: #FF4500;
+    min-width: 24px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: verdana;
+
+}
+.top-right {
+    position: absolute;
+    top: -100px;
+    right: 16px;
+    font-size: 16px;
+
+}
+
+.dropdown a:hover {background-color: #FF4500}
+
+.show {display:block;}
+
+
+</style>
+
+<body>
+
+<div style="position: absolute; top: 4px; left: 0px; width: 100%;background-color:#606060">&nbsp;&nbsp; <h9 style="font-family:verdana; color:white"><b> Give and Get </b></h9> <a href="homePage.html"> <h9 style="font-family:verdana; color:lightgrey;"> HOME </a><a href="VolunteerPage.html"> <h9 style="font-family:verdana;color:lightgrey"> POST </a>
+</div>
+
+<div class="images" style="max-width:30000px">
+  <img class="mySlides" src="fire.jpg" style="width:100%">
+  <img class="mySlides" src="flood.jpg" style="width:100%">
+  <img class="mySlides" src="rebuild.jpg" style="width:100%">
+  <h2><span> <div class="dropdown"> <div class = "typewriter"> <h1> &nbsp; Give and Get.</h1>
+    <button onclick="myFunction()" class="dropbtn"> Click to help with disaster relief across the nation
+      </button>
+      <div id="myDropdown" class="dropdown-content" style= "left:0;">
+        <a href="About1.html">Northern California Wild Fire</a>
+        <a href="About2.html">Houston Hurricane</a>
+        <a href="About3.html">Puerto Rico Hurricanes</a>
+      </div><h2> <span> </div>
+
+</div> <div class="top-right">Give & Get aims to give people the opportunity <br/>to donate items and volunteer their time for <br/> organizations and individuals who have been <br/>affected in the immediate aftermath of disasters.</div></div>
+
+
+
+
+<script>
+
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+$(function() {
+
+    $("h2")
+        .wrapInner("<span>")
+
+    $("h2 br")
+        .before("<span class='spacer'>")
+        .after("<span class='spacer'>");
+
+});
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
